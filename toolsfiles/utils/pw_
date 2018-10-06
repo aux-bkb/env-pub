@@ -4,14 +4,15 @@
 #
 our $Pwdhash = "$ENV{HOME}/tools/sw/pwdhash.py";
 our $Twik = qx(which twik);
+
 chomp($Twik);
 our $Twikconf = "$ENV{HOME}/.twik.conf";
-#our $Twik = "$ENV{HOME}/tools/moreutils/bin/twikpw";
-#"/usr/local/bin/twik";
-#
+
 my @u = split('', $ENV{USER});
 die "Err: invalid username " unless $u[0] eq $u[2];
 my $Recipient = $u[0] . $u[1] . $u[2] . '@' . $u[1] . $u[2] . 'dir.com';
+
+
 
 our $Userprofile = $ARGV[0];
 our $Token = $ARGV[1];

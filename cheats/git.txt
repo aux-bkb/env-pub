@@ -1,5 +1,13 @@
 # Git
 
+## gitignore
+
+temp vim files
+
+   *~
+   *.swp
+   *.swo
+
 #### Forking workflow (simple)
 
     - fork repo in github

@@ -1,0 +1,5 @@
+use Encode::Base32::Crockford qw(base32_decode); # your choice of methods
+ 
+my $decoded = base32_decode($ARGV[0]);
+
+print $decoded;

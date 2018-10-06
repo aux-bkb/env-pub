@@ -1,0 +1,8 @@
+# Fastmail
+
+## Nameservers
+
+  ns1.messagingengine.com
+  ns2.messagingengine.com
+
+

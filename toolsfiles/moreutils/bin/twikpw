@@ -173,7 +173,7 @@ sub run {
 
   die "todo: show profiles " unless ($login_input);
 
-  if($login_input =~ /(\d+)\.(\d+)/){
+  if($login_input =~ /(\d+)\.(\d+)/){ # if I call the tool with a number xx.yy (xx=profile, yy=login)
     my ($profile, $login) = get_login ($profile_list, $login_index, $1, $2);
     result_pw ($profile, $login);
   }else{
