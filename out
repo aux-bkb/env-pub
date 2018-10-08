@@ -1,56 +1,39 @@
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/aux-bkb.repo-data.prot/bkb-protenv_51
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/aux-bkb.repo-data.prot/bkb-pwstore_41
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/aux-bkb.repo-data.pub/bkb-env_52
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.prot/configs_cloudconf_59
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.prot/security_cloudsec_45
-xxxx /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.prot/sites_bkb_66
-truedir /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.pub/dev-own_benkb_pubd_63.11
-truedir /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.pub/dev-own_benkbit_pubd_62.51
-truedir /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.pub/dev-own_bentxt_pubd_61.51
-truedir /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.user-data.pub/site-own_benkb_pubd_63.21
-xxxx /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.user-data.sec/security_cloudiisec_42
-xxxx /Users/bkb/homebase/local-dirs_bkb_skyfall/bkb.user-data_skyfall.int/security_intsec-gpg_48
-xxxx /Users/bkb/homebase/local-dirs_bkb_skyfall/bkb.user-data_skyfall.int/security_intsec-misc_47
-xxxx /Users/bkb/homebase/local-dirs_bkb_skyfall/bkb.user-data_skyfall.int/security_intsec-ssh_49
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.priv/configs_appdata_59
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.priv/docs_owndoc_31
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.priv/sites_aux-bkb_69
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.priv/sites_bkb_62
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/articles_bentxt_61.31
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/libs_sourcelib_12
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/libs_weblib_11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/projects_benkbit_63.12
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/releases_bkb_61
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/share_all_57
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/share_editors_58
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-sw_pubstore_53.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-vi_pubstore_54.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_bensrc_pubstore_61.15
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_bentxt_pubstore_61.11
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/aux-bkb.repos_user-data.priv/bkb-priv_51
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/aux-bkb.repos_user-data.priv/bkb-pwstore_41
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/aux-bkb.repos_user-data.pub/bkb-env_52
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.cloud_user-data.prot_/Jakob_cloud_91
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.cloud_user-data.prot_/configs_cloudconf_59
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.cloud_user-data.prot_/docs_clouddocs_35
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.cloud_user-data.prot_/docs_protdocs_25
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.cloud_user-data.prot_/security_cloudsec_45
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-data.int/security_intsec_42
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-data.pub/dev_benkb_pubdata_63.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-data.pub/dev_bensrc_pubdata_66.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-data.pub/dev_bentxt_pubrepo_61.51
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.priv/configs_appdata_59
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.priv/docs_owndoc_31
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.priv/sites_aux-bkb_69
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.priv/sites_bkb_62
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/articles_bentxt_61.31
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/libs_sourcelib_12
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/libs_weblib_11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/projects_benkbit_63.12
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/releases_bkb_61
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/share_all_57
-xxxx /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/share_editors_58
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/sources_aux-bkb-sw_pubstore_53.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/sources_aux-bkb-vi_pubstore_54.11
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/sources_bensrc_pubstore_61.15
-truedir /Users/bkb/homebase/sync-dirs_bkb_skyfall_backup/bkb.user-store.pub/sources_bentxt_pubstore_61.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/devs
+xxx rm -f /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkbit_prot_62.51
+xxx ln -s /Users/bkb/homebase/cloud-dirs_bkb_skyfall/bkb.cloud-data.prot/own-dev_benkbit_prot_62.51 /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkbit_prot_62.51
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/devs
+xxx rm -f /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkb_pub_63.11
+xxx ln -s /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.pub/own-dev_benkb_pub_63.11 /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkb_pub_63.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/devs
+xxx rm -f /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkbit_pub_62.51
+xxx ln -s /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.pub/own-dev_benkbit_pub_62.51 /Users/bkb/homebase/decimals/_topics/devs/own-dev_benkbit_pub_62.51
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/devs
+xxx rm -f /Users/bkb/homebase/decimals/_topics/devs/own-dev_bentxt_pub_61.51
+xxx ln -s /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.pub/own-dev_bentxt_pub_61.51 /Users/bkb/homebase/decimals/_topics/devs/own-dev_bentxt_pub_61.51
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sites
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sites/own-site_benkb_pub_63.21
+xxx ln -s /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.pub/own-site_benkb_pub_63.21 /Users/bkb/homebase/decimals/_topics/sites/own-site_benkb_pub_63.21
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/secs
+xxx rm -f /Users/bkb/homebase/decimals/_topics/secs/twik-sec_cloudii_42.33
+xxx ln -s /Users/bkb/homebase/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.sec/cloudii-sec_sec_46/twik-sec_cloudii_42.33 /Users/bkb/homebase/decimals/_topics/secs/twik-sec_cloudii_42.33
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/biblios
+xxx rm -f /Users/bkb/homebase/decimals/_topics/biblios/info-biblio_doclib_11.21
+xxx ln -s /Users/bkb/homebase/share-dirs_biblio_skyfall/biblio.share-store.pub/info-biblio_doclib_11.21 /Users/bkb/homebase/decimals/_topics/biblios/info-biblio_doclib_11.21
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/biblios
+xxx rm -f /Users/bkb/homebase/decimals/_topics/biblios/info-biblio_sourcelib_11.11
+xxx ln -s /Users/bkb/homebase/share-dirs_biblio_skyfall/biblio.share-store.pub/info-biblio_sourcelib_11.11 /Users/bkb/homebase/decimals/_topics/biblios/info-biblio_sourcelib_11.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sourcess
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11
+xxx ln -s /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/projects_benkbit_63.12/sources_aux-bkb-vi_pubstore_54.11 /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sourcess
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-sw_pubstore_53.11
+xxx ln -s /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-sw_pubstore_53.11 /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-sw_pubstore_53.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sourcess
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-sw_pubstore_53.11
+xxx ln -s /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-sw_pubstore_53.11/sources_aux-bkb-sw_pubstore_53.11 /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-sw_pubstore_53.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sourcess
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11
+xxx ln -s /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-sw_pubstore_53.11/sources_aux-bkb-vi_pubstore_54.11 /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11
+xxx mkdir -p /Users/bkb/homebase/decimals/_topics/sourcess
+xxx rm -f /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11
+xxx ln -s /Users/bkb/homebase/sync-dirs_bkb_skyfall/bkb.user-store.pub/sources_aux-bkb-vi_pubstore_54.11 /Users/bkb/homebase/decimals/_topics/sourcess/sources_aux-bkb-vi_pubstore_54.11

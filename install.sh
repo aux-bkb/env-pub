@@ -51,8 +51,8 @@ ln -s $redir ~/r
 rm -f $redir/aux
 ln -s $auxdir $redir/aux
 
-rm -f $redir/env
-ln -s $cwd $redir/env
+rm -f $redir/pub-env
+ln -s $cwd $redir/pub-env
 
 rm -f $exohome/tools
 ln -s $cwd/exotools $exohome/tools

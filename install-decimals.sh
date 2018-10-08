@@ -92,8 +92,8 @@ handle_subtopic () {
   case $bdir in
     *-*_*_*) 
       mkdir -p $topics/$topic
-      rm -f $topics/$topic/$item
-      ln -s $dir $topics/$topic/$item
+      rm -f $topics/$topic/$bdir
+      ln -s $dir $topics/$topic/$bdir
    ;;
    *) : ;;
    esac 
@@ -138,7 +138,7 @@ dir_filter () {
       dir_ls $dir
    elif echo $bdir | egrep -q '_\d+\.\d\d$'  ; then
      link_dir $after $bdir $dir
-     handle_subtopic $bdir $dir
+      handle_subtopic $bdir $dir
       dir_ls $dir
    elif echo $bdir | egrep -q '_\d+\.\d0.\d\d$'  ; then
      link_dir $after $bdir $dir
