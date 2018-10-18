@@ -32,7 +32,7 @@ comment=$(perl -a -F'==' -e 'print $F[1]' $pubkey)
 
 [ -n "$comment" ] || die "Err: no comment from pubkey '$pubkey'"
 
-command=$(perl -e '@f=split(/\s*::\s*/, $ARGV[0]); print $f[1];' "$comment") 
+command=$(perl -e '@f=split(/\s*::\s*/, $ARGV[0]); print $f[2];' "$comment") 
 
 [ -n "$command" ] || die "Err: no command from pubkey '$pubkey'"
 

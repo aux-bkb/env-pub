@@ -6,3 +6,11 @@
   ns2.messagingengine.com
 
 
+## SMTP
+
+   smtp.fastmail.com
+
+   465
+
+
+
