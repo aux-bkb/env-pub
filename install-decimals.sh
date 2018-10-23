@@ -133,6 +133,10 @@ dir_filter () {
       link_dir $before $bdir $dir
      handle_topic $bdir $dir
        dir_ls $dir
+    elif echo $bdir | egrep -q '_\d+[a-z]\-\d+[a-z]$' ; then
+      link_dir $before $bdir $dir
+     handle_topic $bdir $dir
+       dir_ls $dir
    elif echo $bdir | egrep -q '_\d+\.\d0$'  ; then
      link_dir $category $bdir $dir
       dir_ls $dir
