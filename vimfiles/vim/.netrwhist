@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/diskbase_macbookair01/syncnodes_bkb_skyfall'
 let g:netrw_dirhist_2='/diskbase_skyfall01/syncdir_bkb_skyfall/aux-bkb2.user-repodata.pub/bkb-env_32'
 let g:netrw_dirhist_3='/diskbase_skyfall01/syncdir_bkb_skyfall/aux-bkb2.user-repodata.pub/bkb-env_42/toolsfiles/utils'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/bkb/Downloads'
 let g:netrw_dirhist_6='/diskbase_skyfall01/syncdir_bkb_skyfall/aux-bkb.repos_user-data.pub/bkb-env_52/exotools/minitel/Minitel'
 let g:netrw_dirhist_7='/diskbase_skyfall01/localdir_bkb_skyfall/bkb.user-bulkstore_skyfall.loc/hack/android/HelloAndroid'
 let g:netrw_dirhist_8='/diskbase_skyfall01/localdir_bkb_skyfall/bkb.user-bulkstore_skyfall.loc/hack/android/HelloAndroid/bin'
+let g:netrw_dirhist_9='/diskbase_skyfall01/cloudii-dirs_bkb_skyfall/bkb.cloudii-data.priv/cloudii-sec_46/ssh-clouds_42.32'

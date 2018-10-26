@@ -291,3 +291,5 @@ alias li 'link_to_item'
 alias lip 'link_to_item_parent'
 
 alias si 'show_item'
+
+alias refish "source $HOME/.config/fish/config.fish"
