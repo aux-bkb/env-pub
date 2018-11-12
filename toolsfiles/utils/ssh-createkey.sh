@@ -1,11 +1,11 @@
 #!/bin/sh
 
-USAGE='<path/to/keydir> <keydomain: "clouds"/hostname>  <user> [date id]'
+USAGE='<path/to/keydir> <keydomain: "clouds"/hostname>  <user> [link]'
 
 keydir=$1
 keydomain=$2
 user=$3
-date=$4
+link_yes=$4
 
 die () { echo $@; exit 1; }
 
@@ -15,17 +15,18 @@ die () { echo $@; exit 1; }
 [ -n "$keydomain" ] || die "usage: $USAGE"
 [ -n "$user" ] || die "usage: $USAGE"
 
-[ -n "$date" ] || date=$(date +"%y%m%d")
-[ -n "$date" ] || die "Err: invalid dir"
+stamp=$(date +"%Y%m%d%H%M")
 
 keyname= keytarget=
 case $keydomain in
   clouds)
-      keyname=clouds_${user}_${date}
+      keyname=clouds_${user}_${stamp}
+      keystring="clouds;${user}"
       keytarget=clouds_${user}
     ;;
   *)
-      keyname=host_${user}_${keydomain}_${date}
+      keyname=host_${user}_${keydomain}_${stamp}
+      keystring="host;${user}"
       keytarget=host_${user}
     ;;
 esac
@@ -43,13 +44,13 @@ keypath=$keydir/$keyname
 pw_cmd=
 case $tool in
   twikpw)
-    pw_cmd="twikpw ssh/$keytarget $profile"
+    pw_cmd="twikpw _ssh,$keystring $profile"
     ;;
   pwdhash)
     # ssh/ , slashes doesnt work on ipads Password
     #pw_cmd="pwdhash ssh/${keytarget}_${profile}"
 
-    pw_cmd="pwdhash ssh,${keytarget}_${profile}"
+    pw_cmd="pwdhash _ssh,${keystring}_${profile}"
     ;;
   *)
     die "Err: no tool $tool"
@@ -69,13 +70,15 @@ ssh-keygen -t rsa -b 4096 -C "$keydir/$keyname :: ~/.ssh/$keytarget :: $pw_cmd" 
 
 echo "OK: key successfully generated" 
 
-[ -d "$HOME/.ssh" ] && {
-   echo "OK: now linking to ~/.ssh/"
-   rm -f $HOME/.ssh/$keytarget
-   rm -f $HOME/.ssh/$keytarget.pub
+[ -n "$link_yes" ] && {
+  [ -d "$HOME/.ssh" ] && {
+     echo "OK: now linking to ~/.ssh/"
+     rm -f $HOME/.ssh/$keytarget
+     rm -f $HOME/.ssh/$keytarget.pub
 
-   echo ln -s $cwd/$keypath $HOME/.ssh/$keytarget
-   ln -s $cwd/$keypath $HOME/.ssh/$keytarget
-   ln -s $cwd/$keypath.pub $HOME/.ssh/$keytarget.pub
+     echo ln -s $cwd/$keypath $HOME/.ssh/$keytarget
+     ln -s $cwd/$keypath $HOME/.ssh/$keytarget
+     ln -s $cwd/$keypath.pub $HOME/.ssh/$keytarget.pub
+  }
 }
 
