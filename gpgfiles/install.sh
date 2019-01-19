@@ -10,8 +10,8 @@ os=$(uname)
 
 for f in $os/* ; do
    [ -f "$f" ] || continue
-   base=$(basename $f)
-   rm -f ~/.gnupg/$base
+   basef=$(basename $f)
+   rm -f ~/.gnupg/$basef
    cp $f ~/.gnupg/
 done
 

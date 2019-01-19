@@ -39,4 +39,4 @@ if [ -d $config_fish ]
    end
 end
 
-
+#echo ppp $PATH

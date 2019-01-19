@@ -113,9 +113,8 @@ sub result_pw {
 
       if($printpw){
          print $pw;
-      }else{
-         password_to_clipboard ($pw, $printpw);
       }
+      password_to_clipboard ($pw, $printpw);
 }
 
 
@@ -163,7 +162,7 @@ sub get_login {
 }
 
 sub run {
-  my ($login_input, $profile_input) = @_;
+  my ($login_input, $profile_input, $print_pw) = @_;
 
   die "Err: no twik.conf" unless ( -f $TWIKCONF ) ;
   open (my $fh, '<', $TWIKCONF) || die "Err: cannot opn TWIKCONF in $TWIKCONF";
@@ -171,30 +170,34 @@ sub run {
 
   close $fh;
 
-  die "todo: show profiles " unless ($login_input);
 
-  if($login_input =~ /(\d+)\.(\d+)/){ # if I call the tool with a number xx.yy (xx=profile, yy=login)
-    my ($profile, $login) = get_login ($profile_list, $login_index, $1, $2);
-    result_pw ($profile, $login);
-  }else{
-    my @logins = neardown_logn($profile_list, $login_index, $login_input, $profile_input);
-    if(@logins == 0){
-      if($profile_input){
-         print "Warn: Sorry, couldnt find any logins for $login_input, try to make a new twik pw\n";
-         result_pw($profile_input, $login_input);
-      }else{
-          die "Err: Could not find any logins";
-      }
-    }elsif(@logins == 1){
-      my ($i, $profile, $ii, $login ) = @{ $logins[0] };
-      result_pw ($profile, $login);
+  if($login_input){
+    if($login_input =~ /(\d+)\.(\d+)/){ # if I call the tool with a number xx.yy (xx=profile, yy=login)
+      my ($profile, $login) = get_login ($profile_list, $login_index, $1, $2);
+      result_pw ($profile, $login, $print_pw);
     }else{
-      foreach (@logins){
-        my ($i, $profile, $ii, $login) = @{$_};
-        print "$i.$ii: " . $profile . ' / ' . $login . "\n";
+      my @logins = neardown_logn($profile_list, $login_index, $login_input, $profile_input);
+      if(@logins == 0){
+        if($profile_input){
+          die "Err: invalid profile '$profile_input', cannot make new login" unless grep { $_ eq $profile_input } @$profile_list;
+           print "Warn: Sorry, couldnt find any logins for $login_input, try to make a new twik pw\n";
+           result_pw($profile_input, $login_input, $print_pw);
+        }else{
+            die "Err: Could not find any logins, please give a profile";
+        }
+      }elsif(@logins == 1){
+        my ($i, $profile, $ii, $login ) = @{ $logins[0] };
+        result_pw ($profile, $login, $print_pw);
+      }else{
+        foreach (@logins){
+          my ($i, $profile, $ii, $login) = @{$_};
+          print "$i.$ii: " . $profile . ' / ' . $login . "\n";
+        }
       }
-    }
-  }
+   }
+ }else{
+   map { print "$_" . "\n" } @$profile_list;
+ }
 }
 
 run(@ARGV);

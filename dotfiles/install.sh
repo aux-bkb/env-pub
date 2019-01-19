@@ -3,13 +3,13 @@
 cwd=$(pwd)
 
 
-redir=$HOME/homebase/redir
-[ -d "$redir" ] || mkdir -p "$redir" 
+auxdir=$HOME/aux
+[ -d "$auxdir" ] || mkdir -p "$auxdir" 
 
 trash=$HOME/trash
 [ -d "$trash" ] || mkdir $trash
-rm -f $redir/trash 
-ln -s $trash $redir/trash
+rm -f $auxdir/trash 
+ln -s $trash $auxdir/trash
 
 
 linkfiles (){
@@ -31,16 +31,16 @@ linkfiles (){
             [ -e "$HOME/.$bff" ] && { mv $HOME/.$bff $t/ ; }
             rm -f $HOME/.$bff
             ln -s 	$ff $HOME/.$bff
-            rm -f $redir/.$bff
-            ln -s 	$ff $redir/.$bff
+            rm -f $auxdir/$bff
+            ln -s 	$ff $auxdir/$bff
          done
       ;;
       *_dir) 
          name=${bf%_*}
          rm -rf $HOME/.$name
            ln -s $f $HOME/.$name
-         rm -f $redir/.$name
-           ln -s $f $redir/.$name
+         rm -f $auxdir/$name
+           ln -s $f $auxdir/$name
       ;;
       *_config_indir)  # non destructive sub folders under ~/.config
          mname=${bf%_*}
@@ -57,26 +57,26 @@ linkfiles (){
                ln -s 	$ff $homeconfig/$bff
            done
 
-         redirconfig=$redir/$bf
+         auxdirconfig=$auxdir/$bf
 
-         rm -f $redirconfig
-         ln -s $f $redirconfig 
+         rm -f $auxdirconfig
+         ln -s $f $auxdirconfig 
          ;;
       *_indir)  # non destructive sub folders
          name=${bf%_*}
          homedir=$HOME/.$name
-         redirdir=$redir/.$name
+         auxdirdir=$auxdir/$name
          [ -d "$homedir" ] || mkdir $homedir 
 
-         [ -d "$redirdir" ] || mkdir $redirdir 
+         [ -d "$auxdirdir" ] || mkdir $auxdirdir 
 
            for ff in $f/*; do
                bff=$(basename $ff)
                [ -e "$ff" ] || continue
                rm -rf  $homedir/$bff
               ln -s 	$ff $homedir/$bff
-               rm -rf  $redirdir/$bff
-              ln -s 	$ff $redirdir/$bff
+               rm -rf  $auxdirdir/$bff
+              ln -s 	$ff $auxdirdir/$bff
 
            done
       ;;
@@ -90,11 +90,11 @@ linkfiles (){
            rm -rf $homedir
            ln -s $f $homedir
 
-           rm -f $redir/.$name
-           ln -s $f $redir/.$name
+           rm -f $auxdir/$name
+           ln -s $f $auxdir/$name
 
-           rm -f $redir/$bf
-           ln -s $f $redir/$bf
+           rm -f $auxdir/$bf
+           ln -s $f $auxdir/$bf
 
       ;;
       *)
@@ -109,8 +109,8 @@ linkfiles (){
             rm -f $HOME/.$bf
             ln -s $f $HOME/.$bf
 
-         rm -f $redir/.$bf
-         ln -s $f $redir/.$bf
+         rm -f $auxdir/$bf
+         ln -s $f $auxdir/$bf
    fi
    done
 }
@@ -124,6 +124,6 @@ fi
 
 
 if [ -d $HOME/.config ] ; then
-   rm -f $redir/.config
-   ln -s $HOME/.config $redir
+   rm -f $auxdir/.config
+   ln -s $HOME/.config $auxdir
 fi

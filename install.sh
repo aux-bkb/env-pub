@@ -3,27 +3,32 @@
 # sync test
 
 cwd=$(pwd)
+cwdbase=$(basename $cwd)
+cwdbase_name=${cwdbase%_*}
 
 homebase=$HOME/homebase
-redir=$homebase/redir
+redir=$HOME/redir
 auxdir=$HOME/aux
 
-docs=$auxdir/docs
+mkdir -p "$redir" 
+mkdir -p "$auxdir" 
 
-dirs=$homebase/dirs
-rm -rf $dirs
-mkdir -p $dirs
+rm -f $auxdir/env-pub
+ln -s $cwd $auxdir/env-pub
+
+share=$HOME/share
+mkdir -p $HOME/share
+rm -f $redir/share
+ln -s $HOME/share $redir/share
 
 exohome=$HOME/.exo
-
-[ -d "$redir" ] || mkdir "$redir" 
-[ -d "$auxdir" ] || mkdir "$auxdir" 
-[ -d "$exohome" ] || mkdir "$exohome" 
+mkdir -p "$exohome" 
 
 rm -f $redir/homebase
 ln -s $homebase $redir/homebase
 
 for d in $homebase/*; do
+  [ -d "$d" ] | continue
   bd=$(basename $d)
   rm -f $redir/$bd
    ln -s $d $redir/$bd
@@ -51,20 +56,9 @@ ln -s $redir ~/r
 rm -f $redir/aux
 ln -s $auxdir $redir/aux
 
-rm -f $redir/pub-env
-ln -s $cwd $redir/pub-env
 
 rm -f $exohome/tools
 ln -s $cwd/exotools $exohome/tools
-
-mkdir -p $docs
-
-rm -f $redir/docs
-ln -s $docs $redir/docs
-
-rm -f $docs/cheats
-ln -s $cwd/cheats $docs/cheats
-
 
 #link to redir
 for d in  cheats cheatsheet.txt dotfiles exotools; do
@@ -108,22 +102,16 @@ for d in toolsfiles dotfiles vimfiles tmuxfiles ; do
  done
 
 
-share=$HOME/share
-mkdir -p $HOME/share
-rm -f $redir/share
-ln -s $HOME/share $redir/share
-mkdir -p $redir/aux
-
-for d in aux-*-site; do
-   [ -d "$d" ] || continue
-   nm=${d#*-}
-   rm -f $redir/aux/$nm
-   ln -s $cwd/$d $redir/aux/$nm
-
-   lang=${nm%-*}
-   mkdir -p $share/$lang
-   rm -f $share/$lang/site
-   ln -s $cwd/$d $share/$lang/site
-   rm -f $redir/$nm
-   ln -s $cwd/$d $redir/$nm
-done
+#for d in aux-*-site; do
+#   [ -d "$d" ] || continue
+#   nm=${d#*-}
+#   rm -f $redir/aux/$nm
+#   ln -s $cwd/$d $redir/aux/$nm
+#
+#   lang=${nm%-*}
+#   mkdir -p $share/$lang
+#   rm -f $share/$lang/site
+#   ln -s $cwd/$d $share/$lang/site
+#   rm -f $redir/$nm
+#   ln -s $cwd/$d $redir/$nm
+#done

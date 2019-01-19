@@ -1,0 +1,6 @@
+#!/bin/sh
+
+here=$(dirname $0)
+
+. $here/../programming/gambit-lang.sh
+

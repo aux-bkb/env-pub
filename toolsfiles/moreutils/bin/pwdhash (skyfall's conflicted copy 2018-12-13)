@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 input="$1"
+log="$2"
 
 here=$(dirname $0)
 
@@ -30,8 +31,8 @@ clipcopy (){
 
 token=$(echo "$input" | perl -pe 's/(\w+)_(u\d\w\d-\w+)/$1/g' | perl -pe 's/[^a-z0-9_\-\n]+/_/g')
 
-# version: jsdfjdfjfd_3u0a-bkb , or keepass:3u0a-bkb
-version=$(echo "$input" | perl -pe 's/.+[_:].*(u\d\w\d+\-\w+)+$/$1/g')
+# version: jsdfjdfjfd_3u0a-bkb , or keepass,u3a0-bkb (legacy: keepass:3u0a-bkb)
+version=$(echo "$input" | perl -pe 's/.+[_,:].*(u\d\w\d+\-\w+)+$/$1/g')
 
 [ -n "$version" ] || {
    echo "Err: could not extract version from token"
@@ -73,4 +74,8 @@ password=$(${py} "$pwdhash_py" "$input" "$masterpass")
 
 [ -n "$password" ] || die "Err: could not fetch password"
 
-clipcopy "$password"
+if [ -n "$log" ] ; then
+  echo "$password"
+else
+   clipcopy "$password"
+fi

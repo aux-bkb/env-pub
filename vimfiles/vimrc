@@ -25,10 +25,10 @@ syntax on
 if !empty(glob(expand("~/.vim/bundle")))
    execute pathogen#infect()
 
-	au VimEnter * RainbowParenthesesToggle
-	au Syntax * RainbowParenthesesLoadRound
-	au Syntax * RainbowParenthesesLoadSquare
-	au Syntax * RainbowParenthesesLoadBraces
+	"au VimEnter * RainbowParenthesesToggle
+	"au Syntax * RainbowParenthesesLoadRound
+	"au Syntax * RainbowParenthesesLoadSquare
+	"au Syntax * RainbowParenthesesLoadBraces
 endif
 
 
@@ -72,3 +72,46 @@ autocmd BufReadPost *.org call OrgModeHi('emacs-lisp', 'lisp')
 
 syn region JakeTitle start="<<" end=">>"
 highlight JakeTitle ctermbg=black ctermfg=yellow
+
+
+
+" gui colors
+set background=dark
+hi SpecialKey guifg=Blue
+hi MoreMsg guifg=Green
+hi Visual guifg=NONE guibg=NONE
+hi Folded ctermbg=4 guibg=Blue
+hi FoldColumn ctermbg=7
+hi DiffAdd guibg=Blue
+hi DiffChange guibg=Magenta
+hi DiffDelete guibg=Cyan
+hi Normal guifg=Gray guibg=Black
+hi Cursor guibg=White
+hi lCursor guibg=White
+hi Comment guifg=Cyan
+hi Constant guifg=Magenta
+hi Special guifg=Red
+hi Identifier guifg=Cyan
+hi Statement guifg=Yellow
+hi PreProc guifg=Blue
+hi Type guifg=Green
+hi Underlined guifg=Blue
+hi Todo guifg=Black
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

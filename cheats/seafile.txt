@@ -1,0 +1,15 @@
+How to setup synced folders on a new machine
+
+
+- install seafile
+
+- run seafile for the first time, give root folder, eg: /userdirs_laptop_mallrats01/bkb_luckycloud_mallrats 
+
+
+-> gui open, with the list of the synced folders
+
+
+- click on folder "sync"
+
+- important: "create new folder" , path is the seafile root
+

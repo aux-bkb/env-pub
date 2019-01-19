@@ -1,34 +1,44 @@
 #!/bin/sh
 
-USAGE='<path/to/keydir> <keydomain: "clouds"/hostname>  <user> [link]'
+USAGE='<path/to/keydir>  <user> [link]'
 
 keydir=$1
-keydomain=$2
-user=$3
-link_yes=$4
+user=$2
+link_yes=$3
 
 die () { echo $@; exit 1; }
 
 [ -n "$keydir" ] || die "usage: $USAGE"
 [ -d "$keydir" ] || die "Err: invalid dir"
 
-[ -n "$keydomain" ] || die "usage: $USAGE"
 [ -n "$user" ] || die "usage: $USAGE"
 
 stamp=$(date +"%Y%m%d%H%M")
 
-keyname= keytarget=
+here=$(pwd)
+this=$(basename $here)
+keydomain=
+case "$this" in
+  sshkeys-host_*) keydomain=host;;
+  sshkeys-clouds_*) keydomain=clouds;;
+esac
+
+
+
+keyname= keytarget= keystring=
 case $keydomain in
   clouds)
       keyname=clouds_${user}_${stamp}
       keystring="clouds;${user}"
       keytarget=clouds_${user}
     ;;
-  *)
-      keyname=host_${user}_${keydomain}_${stamp}
+  host)
+    hname=$(hostname)
+      keyname=host_${user}_${hname}_${stamp}
       keystring="host;${user}"
       keytarget=host_${user}
     ;;
+  *) die "Err: invalid directory root '$this'";;
 esac
 
 
@@ -56,6 +66,7 @@ case $tool in
     die "Err: no tool $tool"
     ;;
 esac
+
 
 ${pw_cmd}
 

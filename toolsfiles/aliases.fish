@@ -7,6 +7,10 @@ alias ios_clang "$XCODE/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang"
 
 alias obt $CMDS/org-babel-tangle
 
+alias dev-sw-opensource "sh $HOME/tools/moreutils/devutils/sw-opensource.sh"
+
+alias ssh-load-ssh-keys "sh $HOME/tools/moreutils/ssh/load_ssh_keys.sh"
+
 
 
 set d del

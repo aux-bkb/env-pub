@@ -1,26 +1,23 @@
 #!/bin/sh
 
-
 cwd=$(pwd)
 
-redir=$HOME/homebase/redir
+auxdir=$HOME/aux
 
-mkdir -p $redir
-
+mkdir -p $auxdir
 
 rm -rf $HOME/.vim
-rm -f $redir/.vim
+rm -f $auxdir/vim
 ln -s $cwd/vim $HOME/.vim
-ln -s $cwd/vim $redir/.vim
+ln -s $cwd/vim $auxdir/vim
 
 rm -rf $HOME/.vimrc.d
-rm -f $redir/.vimrc.d
+rm -f $auxdir/vimrc.d
 ln -s $cwd/vimrc.d $HOME/.vimrc.d
-ln -s $cwd/vimrc.d $redir/.vimrc.d
+ln -s $cwd/vimrc.d $auxdir/vimrc.d
 
 rm -f $HOME/.vimrc
-rm -f $redir/.vimrc
+rm -f $auxdir/vimrc
 ln -s $cwd/vimrc $HOME/.vimrc
-ln -s $cwd/vimrc $redir/.vimrc
-
+ln -s $cwd/vimrc $auxdir/vimrc
 

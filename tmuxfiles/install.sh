@@ -1,20 +1,22 @@
 
-
 os=$(uname)
 cwd=$(pwd)
 
-rm -f $HOME/.tmux.conf
-
-rm -f $HOME/.tmux-common.conf
-ln -s $cwd/tmux-common.conf ~/.tmux-common.conf
+auxdir=$HOME/aux
 
 die () { echo $@; exit 1; }
 
-
 os_conf="tmux-${os}.conf" 
 
-if [ -f "$os_conf" ] ; then
-   ln -s $cwd/$os_conf $HOME/.tmux.conf
-else
-   die "todo ' $os"
-fi
+for d in $HOME $auxdir ; do
+  rm -f $d/.tmux-common.conf
+  ln -s $cwd/tmux-common.conf $d/.tmux-common.conf
+
+  if [ -f "$os_conf" ] ; then
+      rm -f $d/.tmux.conf
+      ln -s $cwd/$os_conf $d/.tmux.conf
+  else
+     echo  "todo ' $os"
+  fi
+done
+

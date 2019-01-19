@@ -3,7 +3,7 @@
 cwd=$(pwd)
 
 if [ -n "$2" ] ; then
-   find "$cwd" -iname "$1"  | grep -i $2
+   find "$cwd" -iname "*$1*"  | grep -i $2
 else
-   find "$cwd" -iname "$1"
+   find "$cwd" -iname "*$1*"
 fi

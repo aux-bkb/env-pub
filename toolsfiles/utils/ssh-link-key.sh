@@ -15,10 +15,10 @@ ssh=$HOME/.ssh
 
    kname=
    case $cwdname in 
-     ssh-clouds)
+     sshkeys-clouds)
        kname=$kkname
        ;;
-     ssh-host)
+     sshkeys-host)
       kname=${kkname%_*}
        ;;
      *)

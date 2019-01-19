@@ -1,5 +1,12 @@
 Perl
+====
+
+List
 ----
+
+### Are there matching elements in the list
+
+   (grep { $suspect eq $_ } @convicts) 
 
 ### conditionals with the ternary operator
    my $val = (cond) ? expr1 : expr2;
