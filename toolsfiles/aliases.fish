@@ -10,6 +10,8 @@ alias obt $CMDS/org-babel-tangle
 alias dev-sw-opensource "sh $HOME/tools/moreutils/devutils/sw-opensource.sh"
 
 alias ssh-load-ssh-keys "sh $HOME/tools/moreutils/ssh/load_ssh_keys.sh"
+alias twikpw "perl $HOME/tools/moreutils/crypto/twikpw.pl"
+alias ssh-createkey "sh $HOME/tools/moreutils/ssh/ssh-createkey.sh"
 
 
 

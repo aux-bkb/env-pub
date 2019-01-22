@@ -6,6 +6,10 @@ sshdir=$HOME/.ssh
 
 die(){ echo $@; exit 1; }
 
+twikpw () {  # this is a possible tool in the line of the pubkey
+   perl $HOME/tools/moreutils/crypto/twikpw.pl $@
+ }
+
 [ -e "$sshdir" ] || { echo "Err: no  sshdir under $sshdir" ; exit 1; }
 
 if [ -n "$key" ] ; then

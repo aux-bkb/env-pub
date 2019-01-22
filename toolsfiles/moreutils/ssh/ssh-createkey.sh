@@ -8,6 +8,10 @@ link_yes=$3
 
 die () { echo $@; exit 1; }
 
+twikpw () { # cmd used below
+  perl $HOME/tools/moreutils/crypto/twikpw.pl $@
+}
+
 [ -n "$keydir" ] || die "usage: $USAGE"
 [ -d "$keydir" ] || die "Err: invalid dir"
 
@@ -29,13 +33,13 @@ keyname= keytarget= keystring=
 case $keydomain in
   clouds)
       keyname=clouds_${user}_${stamp}
-      keystring="clouds;${user}"
+      keystring="clouds_${user}"
       keytarget=clouds_${user}
     ;;
   host)
     hname=$(hostname)
       keyname=host_${user}_${hname}_${stamp}
-      keystring="host;${user}"
+      keystring="host_${user}"
       keytarget=host_${user}
     ;;
   *) die "Err: invalid directory root '$this'";;
@@ -68,12 +72,13 @@ case $tool in
 esac
 
 
+echo ${pw_cmd}
 ${pw_cmd}
 
 if [ "$?" -eq "0" ] ; then 
    echo "Ok: Password successfully stored in clipboard"
  else
-   echo  "WARN: could not fetch password with cmd '$pw_cmd'"
+   die  "WARN: could not fetch password with cmd '$pw_cmd'"
 fi
 echo ""
 
