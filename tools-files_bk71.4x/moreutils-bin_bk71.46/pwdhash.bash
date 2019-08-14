@@ -1,0 +1,1 @@
+../moreutils_bk71.45/crypto_bk71.45.15/pwdhash.bash

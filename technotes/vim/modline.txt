@@ -1,3 +1,0 @@
-vim: setting stuff like 'filetype' with a modline (first, or last line)
-
-// vim: set ft=javascript:

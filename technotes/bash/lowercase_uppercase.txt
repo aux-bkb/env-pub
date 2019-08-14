@@ -1,3 +1,0 @@
-Bash: From to Lowercase and/or back
-
-echo "$a" | tr '[:upper:]' '[:lower:]'

@@ -1,0 +1,9 @@
+#/usr/bin/env perl
+
+
+my $input ="Parks and Recreation - S05E01 - Ms. Knope Goes to Washington";
+
+$input =~ s/ - /_/g; # Replace all " - " with "_"
+$input =~ s/[^A-Za-z0-9]/_/g; # Replace all non-alphanumericals with "_"
+
+print $input;

@@ -1,5 +1,0 @@
-Date: using the date command
-
-   date +"%m-%d-%y"
-
-   02-27-07

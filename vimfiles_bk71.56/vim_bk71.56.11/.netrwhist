@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/userdirs_skyfall01/bkb_local-nodes0_skyfall/local-store0_skyfall.bkb.priv/hak/afterglow'
+let g:netrw_dirhist_2='/dirbase_laptop_skyfall01/userdir_bkb_cloud-luckyc_skyfall/cloud-datanode2.bkb.priv/crypto-priv_86.cd2i/sshkeys-clouds_86.32/twikpw/ben_p3a0.pwc'
+let g:netrw_dirhist_3='/dirs_laptop_skyfall01/user_bkb_cloud-dropbox_skyfall/cloud-data1.bkb.prot/env-pub_bk71.cd1o/dotfiles/fish_config_indir/conf'
+let g:netrw_dirhist_4='/dirs_laptop_skyfall01/user_bkb_cloud-luckyc_skyfall/cloud-data2.bkb.priv/sec-priv_bk86.cd2i/keepass-keyfiles_bk87.14/keefile_cloud_u4a0-bkb.pwc'
+let g:netrw_dirhist_5='/Users/bkb/webarchive'

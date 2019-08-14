@@ -1,37 +1,52 @@
 #!/bin/sh
 
-# sync test
+# sync tester
 
 cwd=$(pwd)
 cwdbase=$(basename $cwd)
 cwdbase_name=${cwdbase%_*}
 
-homebase=$HOME/homebase
-redir=$HOME/redir
-auxdir=$HOME/aux
+homebase=$HOME/base
+rlinks=$homebase/rlinks
+auxlinks=$homebase/auxlinks
 
-mkdir -p "$redir" 
-mkdir -p "$auxdir" 
+mkdir -p "$rlinks" 
+mkdir -p "$auxlinks" 
 
-rm -f $auxdir/env-pub
-ln -s $cwd $auxdir/env-pub
+rm -f ~/aux
+ln -s $auxlinks ~/aux
 
-share=$HOME/share
-mkdir -p $HOME/share
-rm -f $redir/share
-ln -s $HOME/share $redir/share
+rm -f ~/r
+ln -s $rlinks ~/r
+rm -f ~/r/base
+ln -s $homebase ~/r/base
 
-exohome=$HOME/.exo
-mkdir -p "$exohome" 
+rm -f $rlinks/$cwdbase_name
+ln -s $cwd $rlinks/$cwdbase_name
 
-rm -f $redir/homebase
-ln -s $homebase $redir/homebase
+rm -f $auxlinks/$cwdbase
+ln -s $cwd $auxlinks/$cwdbase
+
+rm -f $rlinks/aux
+ln -s $auxlinks $rlinks/aux
+
+sharedir=$HOME/share
+mkdir -p $sharedir
+
+rm -f $rlinks/share
+ln -s $sharedir $rlinks/share
+
+rm -f $sharedir/templates
+ln -s $cwd/templates $sharedir/templates
+
+rm -f $rlinks/homebase
+ln -s $homebase $rlinks/homebase
 
 for d in $homebase/*; do
   [ -d "$d" ] | continue
   bd=$(basename $d)
-  rm -f $redir/$bd
-   ln -s $d $redir/$bd
+  rm -f $rlinks/$bd
+   ln -s $d $rlinks/$bd
    case "$bd" in 
      *_*_*)
      for dd in $d/* ; do
@@ -50,52 +65,32 @@ for d in $homebase/*; do
    esac
 done
 
-rm -f ~/r
-ln -s $redir ~/r
 
-rm -f $redir/aux
-ln -s $auxdir $redir/aux
-
-
-rm -f $exohome/tools
-ln -s $cwd/exotools $exohome/tools
-
-#link to redir
-for d in  cheats cheatsheet.txt dotfiles exotools; do
+#link to rlinks
+for d in  cheats cheatsheet.txt dotfiles_bk71.11 exotools; do
 	[ -e "$d" ] || continue
-	rm -f $redir/$d
-	ln -s $cwd/$d $redir/$d
+	rm -f $rlinks/$d
+	ln -s $cwd/$d $rlinks/$d
 done
 
-# exotools
-exohome=$HOME/.exo
-mkdir -p $exohome/log
-rm -f $exohome/tools
-ln -s $cwd/exotools $exohome/tools
-
-
-rm -f $redir/.exo
-ln -s $exohome $redir/.exo
-rm -f $redir/exotools
-ln -s $cwd/exotools $redir/
-
-# link from ~/ to redir/
+# link from ~/ to rlinks/
 for d in hack Downloads local share Dropbox ; do
    [ -d "$HOME/$d" ] || continue
-   rm -f $redir/$d
-   ln -s $HOME/$d $redir/$d
+   rm -f $rlinks/$d
+   ln -s $HOME/$d $rlinks/$d
 done
 
-rm -f $redir/boot.sh
-ln -s $cwd/boot.sh $redir/
+rm -f $rlinks/boot.sh
+ln -s $cwd/boot.sh $rlinks/
 
-for d in toolsfiles dotfiles vimfiles tmuxfiles ; do
-   [ -d "$d" ] && {
+
+for d in toolsfiles dotfiles_bk71.11 vimfiles tmuxfiles ; do
+   [ -d "$cwd/$d" ] && {
       bn=$(basename $d)
-      rm -f $redir/$bn
-      ln -s $cwd/$bn $redir/$bn
+      rm -f $rlinks/$bn
+      ln -s $cwd/$bn $rlinks/$bn
    
-      cd "$d" 
+      cd "$cwd/$d" 
       sh ./install.sh
       cd $cwd
    }
@@ -105,13 +100,13 @@ for d in toolsfiles dotfiles vimfiles tmuxfiles ; do
 #for d in aux-*-site; do
 #   [ -d "$d" ] || continue
 #   nm=${d#*-}
-#   rm -f $redir/aux/$nm
-#   ln -s $cwd/$d $redir/aux/$nm
+#   rm -f $rlinks/aux/$nm
+#   ln -s $cwd/$d $rlinks/aux/$nm
 #
 #   lang=${nm%-*}
 #   mkdir -p $share/$lang
 #   rm -f $share/$lang/site
 #   ln -s $cwd/$d $share/$lang/site
-#   rm -f $redir/$nm
-#   ln -s $cwd/$d $redir/$nm
+#   rm -f $rlinks/$nm
+#   ln -s $cwd/$d $rlinks/$nm
 #done

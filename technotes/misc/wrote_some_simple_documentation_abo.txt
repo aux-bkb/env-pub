@@ -1,3 +1,0 @@
-http://brianmckenna.org/blog/roy_docs_types
-
-wrote some simple documentation abo

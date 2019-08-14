@@ -1,0 +1,36 @@
+#!/bin/sh
+
+USAGE='<scm file> [camlp5 binary] [include dir (pa_..cmo pr_..cmo]'
+
+
+inputfile=$1
+camlp5_bin=$2
+camlp5_inc=$3
+
+camlp5_default=/Users/bkb/.opam//4.02.3+buckle-master/bin/camlp5
+
+die () { echo $@; exit 1; }
+
+[ -f "$inputfile" ] || die "Err: no input. usage $USAGE"
+
+camlp5=
+if [ -n "$camlp5_bin" ]  ; then
+  camlp5="$camlp5_bin"
+  [ -f "$camlp5" ] || die "Err: couldnt find camlp5"
+  [ -n "$camlp5_inc" ] || die "Err: no include path for $camlp5_bin"
+
+  ${camlp5} -I $camlp5_inc pa_scheme.cmo pr_o.cmo  -impl "$inputfile" | perl -pe 's/^\s*;(.*)$/\(\*$1 \*\)/g' 
+
+else
+   camlp5=$(which camlp5)
+   [ -f "$camlp5" ] || camlp5=$camlp5_default
+
+   [ -f "$camlp5" ] || die "Err: couldnt find camlp5"
+
+   ${camlp5} pa_scheme.cmo pr_o.cmo  -impl "$inputfile" | perl -pe 's/^\s*;(.*)$/\(\*$1 \*\)/g' 
+
+fi
+
+
+
+

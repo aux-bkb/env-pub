@@ -1,4 +1,0 @@
-make: exit with an error
-
-
-	$(error Error: couldn't load file)

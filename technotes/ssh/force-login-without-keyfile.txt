@@ -1,4 +1,0 @@
-ssh: force login without keyfile
-
-
-   ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+tools=$HOME/aux
+
+#url=$($tools/moreutils/firefox/geturl.py)
+
+url="$(osascript -e 'tell application "Brave Browser" to get URL of active tab of window 1')"
+
+echo url: $url
+
+ssh bkb@diehard.local "\$HOME/aux/moreutils/chrome/open-url.py '$url'"

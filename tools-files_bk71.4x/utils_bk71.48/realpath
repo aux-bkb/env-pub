@@ -1,0 +1,10 @@
+#!/bin/sh
+
+in=
+if [ -n "$0" ];
+  in=$0
+else
+  in=$(pwd)
+fi
+
+perl -MCwd -le 'print Cwd::realpath($ARGV[0])' $@ 

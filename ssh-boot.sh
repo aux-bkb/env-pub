@@ -10,7 +10,7 @@ for k in $sshome/*.pub ; do
   [ -f "$k" ] || continue
   bk=$(basename $k)
   pk=${bk%.*}
-  $HOME/tools/utils/load-ssh $sshome/$pk
+  $HOME/aux/utils/load-ssh $sshome/$pk
   keychain --eval --quiet -Q $sshome/$pk
 done
 
