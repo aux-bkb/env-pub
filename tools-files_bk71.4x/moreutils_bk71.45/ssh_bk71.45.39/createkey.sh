@@ -30,10 +30,9 @@ esac
 
 keydir_base=$(basename $keydir_path)
 
-decimal=${keydir_base##*_}
 
 minute_stamp=$(date +"%Y%m%d%H%M")
-zettel_stamp="$decimal.$minute_stamp"
+zettel_stamp="$minute_stamp"
 
 keyname= keytarget=
 case $keydomain in
@@ -59,7 +58,7 @@ keypath=$keydir_path/$keyname
 #die keypath $keypath
 [ -f "$keypath" ] && die "Err: key '$keypath' already exists"
 
-profile=${keydir_base%_*}
+profile=${keydir_base}
 pw_cmd=
 case $tool in
   twikpw)
@@ -87,8 +86,10 @@ if [ "$?" -eq "0" ] ; then
 fi
 echo ""
 
+keysource="$keyname.pub in ./$here/$keydir_path/"
+
 #ssh-keygen -t rsa -b 4096 -C "in $here: $keydir/$keyname :: ~/.ssh/$keytarget" -f "$keypath" 
-ssh-keygen -t rsa -b 4096 -C "$keyname.pub :: ~/.ssh/$keytarget.pub :: $pw_cmd" -f "$keypath" 
+ssh-keygen -t rsa -b 4096 -C "$keysource :: ~/.ssh/$keytarget.pub :: $pw_cmd" -f "$keypath" 
 
 echo "OK: key successfully generated" 
 

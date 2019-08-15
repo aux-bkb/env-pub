@@ -77,13 +77,16 @@ fi
 echo ${py} "$pwdhash_py" "$Input" "Masterpass"
 
 pwhash=$(${py} "$pwdhash_py" "$Input" "$Masterpass")
-
-#die ppp $pwhash
-
 [ -n "$pwhash" ] || die "Err: could not fetch hash from pwdhash"
 
+length=$(perl -e 'print(scalar( (split "", $ARGV[0])))' "$Masterpass")
+
+pwhash_cut=$(echo "$pwhash" | cut -c -$length)
+
+#echo ppp $pwhash
+
 if [ -n "$Masterpass_arg" ] ; then
-   echo "$pwhash"
+   echo "$pwhash_cut"
  else
-   clipcopy "$pwhash"
+   clipcopy "$pwhash_cut"
  fi

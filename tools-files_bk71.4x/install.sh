@@ -2,24 +2,22 @@
 
 cwd=$(pwd)
 
-tools=$HOME/tools
-mkdir -p $tools
-
-redir=$HOME/base/redir
-
-mkdir -p $redir
+rlinks=$HOME/base/rlinks
+mkdir -p $rlinks
 rm -f $HOME/r
-ln -s $redir $HOME/r
+ln -s $rlinks $HOME/r
 
-rm -f $redir/tools
-ln -s $tools $redir/tools
+toolslinks=$HOME/base/toolslinks
+mkdir -p $toolslinks
+rm -f ~/tools
+ln -s $toolslinks ~/tools
 
 for f in aliases.fish ; do
-  rm -f $tools/$f
-  ln -s $cwd/$f $tools/$f
+  rm -f ~/tools/$f
+  ln -s $cwd/$f ~/tools/$f
 
-  rm -f $redir/$f
-  ln -s $cwd/$f $redir/$f
+  rm -f ~/r/$f
+  ln -s $cwd/$f ~/r/$f
 done
 
 for t in *; do
@@ -28,10 +26,10 @@ for t in *; do
    bt=$(basename $t)
    btname=${bt%_*}
 
-   rm -f $tools/$btname
-   ln -s $cwd/$t $tools/$btname
+   rm -f ~/tools/$btname
+   ln -s $cwd/$t ~/tools/$btname
 
-   rm -f $redir/$btname
-   ln -s $cwd/$t $redir/$btname
+   rm -f ~/r/$btname
+   ln -s $cwd/$t ~/r/$btname
 done
 
